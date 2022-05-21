@@ -1,5 +1,3 @@
-from ipyleaflet.leaflet import Icon
-from numpy.lib.stride_tricks import sliding_window_view
 import ee
 import folium
 import geemap.foliumap as geemap
