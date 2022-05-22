@@ -12,7 +12,11 @@ date_start="2005-01-01"
 date_end="2010-12-31"
 coordinates=ee.Geometry.Point([21.6, 37.75])
 modis_collection=ee.ImageCollection("MODIS/006/MOD13Q1")
-
+try:
+  ee.Initialize()
+except Exception as e:
+  ee.Authenticate()
+  ee.Initialize()
 time_series = (modis_collection
                .filterDate(date_start,date_end)
                .select("NDVI")

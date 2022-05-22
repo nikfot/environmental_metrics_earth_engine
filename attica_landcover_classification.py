@@ -537,7 +537,11 @@ def add_elements(input,objects):
   for obj in objects:
     input.append(obj)
   return input
-
+try:
+  ee.Initialize()
+except Exception as e:
+  ee.Authenticate()
+  ee.Initialize()
 palette=["#6D6D6D","#69BFE8","#E67C5C","#72A64B"]# [urban,water,soil,vegetation]
 palette_extended=["#6D6D6D","#3BB3F9","#E67C5C","#000000","#3F7724","#90E570"] #[urban,water,soil,roads,dense vegetation,light vegetation]
 #3BB3F9
